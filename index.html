@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Japanese Word Memorizer</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app" aria-label="Japanese word memorizer">
+      <header class="header">
+        <h1 class="title">Japanese Words</h1>
+        <div class="topRight">
+          <button class="miniBtn" id="uploadBtn" type="button">Upload JSON</button>
+          <input id="fileInput" type="file" accept=".json,application/json" hidden />
+          <button class="miniBtn" id="showAllBtn" type="button">Show all words</button>
+          <div class="counter" aria-live="polite">
+            <span id="counterText">1 / 5</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="card" aria-label="Flashcard">
+        <div class="jp" id="jpText" aria-live="polite">食べる</div>
+
+        <div class="details" id="details" hidden>
+          <div class="detailRow">
+            <div class="label">Hiragana</div>
+            <div class="value" id="hiraganaText">たべる</div>
+          </div>
+          <div class="detailRow">
+            <div class="label">中文</div>
+            <div class="value" id="meaningText">吃</div>
+          </div>
+          <div class="detailRow">
+            <div class="label">Part of Speech</div>
+            <div class="value" id="posText">Verb</div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn btnSecondary" id="backwardBtn" type="button">
+            Backward
+          </button>
+          <button class="btn btnSecondary" id="passBtn" type="button">
+            Pass
+          </button>
+          <button class="btn btnPrimary" id="learnBtn" type="button">
+            Learn
+          </button>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="hint">Tip: Click <strong>Learn</strong> to reveal, then <strong>Pass</strong> to move on.</div>
+      </footer>
+    </main>
+
+    <aside class="sidePanel" id="sidePanel" aria-label="All words" hidden>
+      <div class="panelHeader">
+        <h2 class="panelTitle">All words</h2>
+        <button class="miniBtn" id="closePanelBtn" type="button">Close</button>
+      </div>
+      <div class="panelBody" id="allWordsList"></div>
+    </aside>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
