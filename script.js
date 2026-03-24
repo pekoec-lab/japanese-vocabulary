@@ -17,8 +17,8 @@ const meaningText = document.getElementById("meaningText");
 const posText = document.getElementById("posText");
 const details = document.getElementById("details");
 const counterText = document.getElementById("counterText");
-const backwardBtn = document.getElementById("backwardBtn");
-const passBtn = document.getElementById("passBtn");
+const previousBtn = document.getElementById("previousBtn");
+const nextBtn = document.getElementById("nextBtn");
 const learnBtn = document.getElementById("learnBtn");
 const uploadBtn = document.getElementById("uploadBtn");
 const fileInput = document.getElementById("fileInput");
@@ -106,12 +106,12 @@ function render() {
   renderAllWordsPanel();
 }
 
-backwardBtn.addEventListener("click", () => {
+previousBtn.addEventListener("click", () => {
   index = clampIndex(index - 1);
   render();
 });
 
-passBtn.addEventListener("click", () => {
+nextBtn.addEventListener("click", () => {
   index = clampIndex(index + 1);
   render();
 });
